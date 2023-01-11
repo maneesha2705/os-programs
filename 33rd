@@ -45,3 +45,24 @@ printf("%d\t", frames[j]);
 }
 printf("\n\nTotal Page Faults = %d", faults);
 }
+
+
+
+Enter number of frames: 12
+Enter number of pages: 5
+Enter page reference string: 11
+18
+12
+16
+14
+
+11      -1      -1      -1      -1      -1      -1      -1      -1      -1      -1      -1
+11      18      -1      -1      -1      -1      -1      -1      -1      -1      -1      -1
+11      18      12      -1      -1      -1      -1      -1      -1      -1      -1      -1
+11      18      12      16      -1      -1      -1      -1      -1      -1      -1      -1
+11      18      12      16      14      -1      -1      -1      -1      -1      -1      -1
+
+Total Page Faults = 5
+--------------------------------
+Process exited after 44.16 seconds with return value 0
+Press any key to continue . . .
