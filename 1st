@@ -1,22 +1,19 @@
-#include <iostream>
-#include <unistd.h>
+#include<stdio.h>
+#include<unistd.h>
+#include<sys/types.h>
 int main()
 {
-    std::cout<<"Current process Id : "<<getpid()<<std::endl;
-    pid_t childProcessId = fork();
-    
-    if(childProcessId < 0)
-    {
-        std::cout<<"Failed to Create a new Process"<<std::endl;
-    }
-    else if (childProcessId == 0)
-    {
-        
-        std::cout<<"Child Process Id : "<<getpid()<< " Its parent ID : "<<getpid()<<std::endl;
-    }
-    else if (childProcessId > 0)
-    {
-       
-        std::cout<<"Parent Process Id : "<<getpid()<< " Its Child Process ID : "<<childProcessId<<std::endl;
-    }
+pid_t p;
+printf("before fork\n");
+p=fork();
+if(p==0)
+{
+printf("I am child having id %d\n",getpid());
+printf("My parent's id is %d\n",getppid());
+}
+else{
+printf("My child's id is %d\n",p);
+printf("I am parent having id %d\n",getpid());
+}
+printf("Common\n");
 }
